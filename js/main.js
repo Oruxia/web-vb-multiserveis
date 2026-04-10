@@ -252,16 +252,23 @@ if (jumpLinks.length > 0) {
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
-  const jumpObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        jumpLinks.forEach(link => {
-          link.classList.toggle('jl-active', link.getAttribute('href') === '#' + id);
-        });
+  function updateJumpNav() {
+    /* Línea de activación: 40% desde arriba del viewport
+       → la sección cuyo top acaba de cruzar esa línea es la activa */
+    const triggerLine = window.innerHeight * 0.40;
+    let activeId = null;
+
+    sections.forEach(section => {
+      if (section.getBoundingClientRect().top <= triggerLine) {
+        activeId = section.id;
       }
     });
-  }, { threshold: 0.25, rootMargin: '-80px 0px -55% 0px' });
 
-  sections.forEach(s => jumpObserver.observe(s));
+    jumpLinks.forEach(link => {
+      link.classList.toggle('jl-active', link.getAttribute('href') === '#' + activeId);
+    });
+  }
+
+  window.addEventListener('scroll', updateJumpNav, { passive: true });
+  updateJumpNav(); /* estado inicial */
 }
