@@ -38,10 +38,68 @@ html { scroll-behavior: smooth; font-size: 16px; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
   color: var(--text);
-  background: var(--white);
+  background: transparent;
   line-height: 1.65;
   overflow-x: hidden;
   animation: pageFadeIn 0.4s ease-out both;
+}
+
+/* ════════════════════════════════════════════════════════════
+   BG MESH — fondo animado suave (todas las páginas)
+   ════════════════════════════════════════════════════════════ */
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #f5f2ed;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+}
+.b1 {
+  width: clamp(380px, 62vw, 720px);
+  height: clamp(380px, 62vw, 720px);
+  background: rgba(58,74,69,.17);
+  top: -18%; left: -12%;
+  animation: bFloat1 28s ease-in-out infinite;
+}
+.b2 {
+  width: clamp(300px, 52vw, 620px);
+  height: clamp(300px, 52vw, 620px);
+  background: rgba(200,144,58,.11);
+  top: 38%; right: -10%;
+  animation: bFloat2 35s ease-in-out infinite;
+}
+.b3 {
+  width: clamp(330px, 58vw, 680px);
+  height: clamp(330px, 58vw, 680px);
+  background: rgba(58,74,69,.09);
+  bottom: -14%; left: 24%;
+  animation: bFloat3 44s ease-in-out infinite;
+}
+@keyframes bFloat1 {
+  0%,100% { transform: translate(0,0); }
+  33%     { transform: translate(7vw,5vh); }
+  66%     { transform: translate(-4vw,8vh); }
+}
+@keyframes bFloat2 {
+  0%,100% { transform: translate(0,0); }
+  40%     { transform: translate(-6vw,-4vh); }
+  70%     { transform: translate(4vw,7vh); }
+}
+@keyframes bFloat3 {
+  0%,100% { transform: translate(0,0); }
+  30%     { transform: translate(6vw,-5vh); }
+  60%     { transform: translate(-5vw,4vh); }
+}
+/* Sin animación para accesibilidad y batería en móvil */
+@media (prefers-reduced-motion: reduce) {
+  .blob { animation: none !important; }
 }
 @keyframes pageFadeIn {
   from { opacity: 0; }
@@ -422,8 +480,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 /* ════════════════════════════════════════════════════════════
    SERVICIOS
    ════════════════════════════════════════════════════════════ */
-.service-block { background: var(--white); }
-.service-block--alt { background: var(--cream-light); }
+.service-block { background: rgba(255,255,255,.82); }
+.service-block--alt { background: rgba(248,246,242,.82); }
 
 .service-block-banner {
   position: relative;
@@ -535,7 +593,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    PORTFOLIO
    ════════════════════════════════════════════════════════════ */
 .portfolio {
-  background: var(--cream);
+  background: rgba(245,242,237,.82);
   padding: 100px 0;
 }
 .portfolio-tabs {
@@ -706,7 +764,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    NOSOTROS
    ════════════════════════════════════════════════════════════ */
 .about {
-  background: var(--white);
+  background: rgba(255,255,255,.82);
   padding: 100px 0;
 }
 .about-grid {
@@ -1232,7 +1290,7 @@ a.contact-card:hover {
    SP — SERVICE PREVIEW (homepage, 3 tarjetas grandes)
    ════════════════════════════════════════════════════════════ */
 .sp-section {
-  background: var(--white);
+  background: rgba(255,255,255,.82);
   padding: 100px 0;
 }
 .sp-grid {
@@ -1304,7 +1362,7 @@ a.contact-card:hover {
    PT — PORTFOLIO TEASER (homepage, 6 fotos)
    ════════════════════════════════════════════════════════════ */
 .pt-section {
-  background: var(--cream);
+  background: rgba(245,242,237,.82);
   padding: 100px 0;
 }
 .pt-grid {
@@ -1364,7 +1422,7 @@ a.contact-card:hover {
    ABOUT TEASER (homepage, 2 columnas)
    ════════════════════════════════════════════════════════════ */
 .about-teaser {
-  background: var(--white);
+  background: rgba(255,255,255,.82);
   padding: 100px 0;
 }
 .at-grid {
@@ -1475,8 +1533,8 @@ a.contact-card:hover {
 /* ════════════════════════════════════════════════════════════
    SERVICE BLOCKS (para servicios.html)
    ════════════════════════════════════════════════════════════ */
-.service-block { background: var(--white); }
-.service-block--alt { background: var(--cream-light); }
+.service-block { background: rgba(255,255,255,.82); }
+.service-block--alt { background: rgba(248,246,242,.82); }
 
 .service-block-banner {
   position: relative;
@@ -1590,7 +1648,7 @@ a.contact-card:hover {
    FULL PORTFOLIO (trabajos.html)
    ════════════════════════════════════════════════════════════ */
 .portfolio {
-  background: var(--cream);
+  background: rgba(245,242,237,.82);
   padding: 80px 0;
 }
 .portfolio-tabs {
@@ -1702,7 +1760,7 @@ a.contact-card:hover {
 /* ════════════════════════════════════════════════════════════
    NOSOTROS PAGE
    ════════════════════════════════════════════════════════════ */
-.about-page { background: var(--white); padding: 80px 0; }
+.about-page { background: rgba(255,255,255,.82); padding: 80px 0; }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
