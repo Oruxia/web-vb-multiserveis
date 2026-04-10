@@ -1830,38 +1830,34 @@ a.contact-card:hover {
   .values-grid { grid-template-columns: 1fr; }
   .page-hero { height: 280px; }
 
-  /* Jump nav — índice vertical en móvil, no sticky */
+  /* Jump nav — fila horizontal deslizable en móvil */
   .jump-nav {
     position: static;
-    border-bottom: 1px solid rgba(58,74,69,.1);
+    border-bottom: 1px solid rgba(58,74,69,.08);
     background: var(--white);
     box-shadow: none;
   }
   .jump-nav-inner {
-    flex-direction: column;
-    overflow-x: visible;
-    width: 100%;
-    padding: 16px 20px;
-    max-width: 100%;
-    margin: 0;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 12px 20px;
     gap: 8px;
   }
   .jump-link {
     flex: none;
-    width: 100%;
+    width: auto;
     text-align: center;
-    padding: 11px 16px;
-    font-size: .78rem;
-    white-space: normal;
-    line-height: 1.3;
+    padding: 7px 16px;
+    font-size: .72rem;
+    white-space: nowrap;
     border-radius: 50px;
-    border: 2px solid rgba(58,74,69,.2);
+    border-width: 1.5px;
   }
-  .jump-link:last-child { border-bottom-width: 2px; }
   .jump-link.jl-active {
     color: var(--forest) !important;
     background: #fff;
-    border-color: rgba(58,74,69,.25);
+    border-color: rgba(58,74,69,.2);
   }
 
   /* Service blocks — banner más compacto y legible */
