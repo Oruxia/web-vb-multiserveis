@@ -1075,8 +1075,8 @@ a.contact-card:hover {
   }
   .nav-logo img {
     width: auto !important;
-    max-width: 120px !important;
-    max-height: 44px !important;
+    max-width: 210px !important;
+    max-height: 56px !important;
     height: auto !important;
     filter: none !important; /* móvil siempre blanco, logo en colores naturales */
     transition: none;
