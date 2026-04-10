@@ -1830,34 +1830,31 @@ a.contact-card:hover {
   .values-grid { grid-template-columns: 1fr; }
   .page-hero { height: 280px; }
 
-  /* Jump nav — fila horizontal deslizable en móvil */
+  /* Jump nav — sub-nav fino en móvil */
   .jump-nav {
     position: static;
-    border-bottom: 1px solid rgba(58,74,69,.08);
     background: var(--white);
     box-shadow: none;
   }
   .jump-nav-inner {
     flex-direction: row;
-    overflow-x: auto;
     justify-content: flex-start;
-    padding: 12px 20px;
-    gap: 8px;
+    padding: 0 4px;
   }
   .jump-link {
-    flex: none;
-    width: auto;
+    flex: 1;
     text-align: center;
-    padding: 7px 16px;
-    font-size: .72rem;
+    padding: 11px 10px 5px;
+    font-size: .68rem;
     white-space: nowrap;
-    border-radius: 50px;
-    border-width: 1.5px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 3px solid rgba(58,74,69,.1);
   }
   .jump-link.jl-active {
-    color: var(--forest) !important;
-    background: #fff;
-    border-color: rgba(58,74,69,.2);
+    color: var(--amber) !important;
+    background: none;
+    border-bottom-color: var(--amber);
   }
 
   /* Service blocks — banner más compacto y legible */
@@ -1883,39 +1880,39 @@ a.contact-card:hover {
    ════════════════════════════════════════════════════════════ */
 .jump-nav {
   background: var(--white);
-  border-bottom: 1px solid rgba(58,74,69,.1);
+  border-bottom: none;
   position: sticky;
   top: var(--nav-h);
   z-index: 50;
-  box-shadow: 0 2px 8px rgba(26,36,33,.06);
+  box-shadow: 0 2px 8px rgba(26,36,33,.04);
 }
 .jump-nav-inner {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 0;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
 .jump-nav-inner::-webkit-scrollbar { display: none; }
 .jump-link {
   font-family: 'Montserrat', sans-serif;
-  font-size: .8rem;
+  font-size: .75rem;
   font-weight: 700;
-  letter-spacing: .06em;
+  letter-spacing: .09em;
   text-transform: uppercase;
-  color: #fff;
-  padding: 9px 22px;
-  border-radius: 50px;
-  border: 2px solid var(--amber);
-  background: var(--amber);
-  transition: color var(--transition), background var(--transition), border-color var(--transition);
+  color: var(--muted);
+  padding: 12px 28px 6px;
+  border: none;
+  background: none;
+  border-bottom: 3px solid rgba(58,74,69,.1);
+  transition: color var(--transition), border-color var(--transition);
   white-space: nowrap;
   flex-shrink: 0;
 }
-.jump-link:hover { background: var(--forest); border-color: var(--forest); color: #fff; }
-.jump-link.jl-active { color: var(--forest); background: #fff; border-color: rgba(58,74,69,.25); }
+.jump-link:hover { color: var(--forest); border-bottom-color: rgba(58,74,69,.28); }
+.jump-link.jl-active { color: var(--amber); border-bottom-color: var(--amber); }
 
 /* ════════════════════════════════════════════════════════════
    STATS — métricas (nosotros.html)
