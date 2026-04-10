@@ -1054,7 +1054,9 @@ a.contact-card:hover {
     height: 72px !important; /* compacta en móvil siempre */
   }
   .nav-logo img {
-    width: 60px !important;
+    width: auto !important;
+    max-width: 120px !important;
+    max-height: 44px !important;
     height: auto !important;
     filter: none !important; /* móvil siempre blanco, logo en colores naturales */
     transition: none;
@@ -1069,11 +1071,20 @@ a.contact-card:hover {
     padding: 24px;
     gap: 8px;
     box-shadow: var(--shadow-md);
-    transform: translateY(-110%);
-    transition: transform var(--transition);
+    /* Visibility en vez de translateY(-110%): evita que overflow-x:hidden del body lo corte en iOS Safari */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
     z-index: 99;
   }
-  .nav-links.open { transform: translateY(0); }
+  .nav-links.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
   .nav-links a {
     padding: 12px 16px;
     border-radius: var(--radius);
@@ -1087,12 +1098,16 @@ a.contact-card:hover {
     border-color: var(--forest) !important;
   }
   .nav-hamburger { display: flex; }
+  /* Hamburger oscuro: el navbar es blanco en móvil, las líneas deben ser visibles */
+  .nav-hamburger span { background: var(--text); }
   /* En móvil el navbar es siempre sólido visualmente */
-  #navbar { background: rgba(255,255,255,0.97) !important; backdrop-filter: blur(16px); }
+  #navbar { background: rgba(255,255,255,0.97) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
 
   /* Hero */
+  .hero { padding-top: var(--nav-h); } /* nav solo ocupa 72px en móvil */
+  .hero-content { padding: 48px 0 200px; } /* más espacio abajo para el hero-strip */
   .hero-ctas { flex-direction: column; }
-  .hero-ctas .btn { text-align: center; justify-content: center; }
+  .hero-ctas .btn { text-align: center; justify-content: center; width: 100%; }
 
   /* Promises */
   .promise-divider { display: none; }
@@ -1121,9 +1136,26 @@ a.contact-card:hover {
   /* Footer */
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .footer-brand { grid-column: 1 / -1; }
+
+  /* Secciones — padding reducido en móvil */
+  .sp-section { padding: 60px 0; }
+  .pt-section { padding: 60px 0; }
+  .about-teaser { padding: 60px 0; }
+  .portfolio { padding: 60px 0; }
+  .about { padding: 60px 0; }
+  .stats-section { padding: 48px 0; }
+  .contact-page-only { padding: 60px 0; }
+  .service-cards-wrap { padding: 36px 0; }
+  .cta-banner { padding: 60px 0; }
 }
 
 @media (max-width: 480px) {
+  /* Hero — iPhone SE y similares */
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content { padding: 36px 0 160px; }
+  .hero-tag { font-size: .72rem; }
+  .hero-sub { font-size: .95rem; }
+
   .portfolio-grid {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 150px;
@@ -1132,6 +1164,9 @@ a.contact-card:hover {
   .footer-copy-mobile { display: block; font-size: .8rem; color: rgba(255,255,255,.3); margin-top: 6px; }
   .footer-bottom { display: none; }
   .whatsapp-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
+
+  /* Botones más compactos */
+  .btn { padding: 12px 24px; font-size: .9rem; }
 }
 
 /* ════════════════════════════════════════════════════════════
