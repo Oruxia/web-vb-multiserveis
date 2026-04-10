@@ -994,6 +994,13 @@ a.contact-card:hover {
   transition: color var(--transition);
 }
 .footer-nav a:hover { color: var(--amber); }
+.footer-address {
+  display: block;
+  font-size: .82rem;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 14px;
+  font-style: italic;
+}
 
 .footer-bottom {
   padding: 24px 0;
