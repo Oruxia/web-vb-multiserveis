@@ -1808,6 +1808,25 @@ a.contact-card:hover {
   .service-block-header { padding: 28px 24px; }
   .values-grid { grid-template-columns: 1fr; }
   .page-hero { height: 280px; }
+
+  /* Jump nav — 3 tabs de ancho igual que reparten el 100% */
+  .jump-nav-inner {
+    justify-content: stretch;
+    overflow-x: visible;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .jump-link {
+    flex: 1;
+    text-align: center;
+    padding: 12px 6px;
+    font-size: .62rem;
+    letter-spacing: .03em;
+    white-space: normal;
+    line-height: 1.3;
+    border-bottom-width: 2px;
+  }
 }
 @media (max-width: 480px) {
   .pt-grid { grid-template-columns: 1fr; grid-auto-rows: 200px; }
