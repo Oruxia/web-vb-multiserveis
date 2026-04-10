@@ -1071,19 +1071,19 @@ a.contact-card:hover {
 @media (max-width: 768px) {
   /* Nav móvil — siempre compacta y sólida */
   .nav-inner {
-    height: 72px !important; /* compacta en móvil siempre */
+    height: 88px !important; /* más alta en móvil para logo grande */
   }
   .nav-logo img {
     width: auto !important;
-    max-width: 210px !important;
-    max-height: 56px !important;
+    max-width: 260px !important;
+    max-height: 72px !important;
     height: auto !important;
     filter: none !important; /* móvil siempre blanco, logo en colores naturales */
     transition: none;
   }
   .nav-links {
     position: fixed;
-    top: 72px; /* alineado con nav compacta móvil */
+    top: 88px; /* alineado con nav móvil */
     left: 0; right: 0;
     background: var(--white);
     flex-direction: column;
