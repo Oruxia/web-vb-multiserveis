@@ -277,8 +277,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding-top: var(--nav-h-hero); /* espacio para el logo transparente de 180px */
+  padding-bottom: 72px; /* altura del hero-strip para que los botones no queden debajo */
   overflow: hidden;
 }
 .hero-bg {
@@ -1122,8 +1124,8 @@ a.contact-card:hover {
   #navbar { background: rgba(255,255,255,0.97) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
 
   /* Hero */
-  .hero { padding-top: var(--nav-h); } /* nav solo ocupa 72px en móvil */
-  .hero-content { padding: 48px 0 200px; } /* más espacio abajo para el hero-strip */
+  .hero { padding-top: var(--nav-h); padding-bottom: 220px; } /* strip vertical en móvil ocupa ~210px */
+  .hero-content { padding: 40px 0 0; }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { text-align: center; justify-content: center; width: 100%; }
 
@@ -1170,7 +1172,8 @@ a.contact-card:hover {
 @media (max-width: 480px) {
   /* Hero — iPhone SE y similares */
   .hero-content h1 { font-size: 2rem; }
-  .hero-content { padding: 36px 0 160px; }
+  .hero-content { padding: 28px 0 0; }
+  .hero { padding-bottom: 240px; }
   .hero-tag { font-size: .72rem; }
   .hero-sub { font-size: .95rem; }
 
