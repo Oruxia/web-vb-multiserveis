@@ -41,9 +41,19 @@ body {
   background: var(--white);
   line-height: 1.65;
   overflow-x: hidden;
+  animation: pageFadeIn 0.4s ease-out both;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.page-fade-out {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
 }
 img { display: block; max-width: 100%; }
-a { text-decoration: none; color: inherit; }
+a { text-decoration: none; color: inherit; transition: color var(--transition); }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
 
@@ -896,11 +906,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   border: 1px solid rgba(255,255,255,.08);
   border-radius: var(--radius);
   padding: 18px 22px;
-  transition: background var(--transition), border-color var(--transition);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
 }
 a.contact-card:hover {
   background: rgba(255,255,255,.1);
   border-color: rgba(200,144,58,.4);
+  transform: translateY(-2px);
 }
 .contact-card-icon {
   flex-shrink: 0;
@@ -2074,53 +2085,70 @@ a.contact-card:hover {
 .lang-switcher {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
   margin-left: 20px;
+  background: rgba(58, 74, 69, 0.08);
+  border-radius: 20px;
+  padding: 3px;
 }
 
 .lang-btn {
   background: none;
   border: none;
-  padding: 2px 4px;
+  padding: 5px 10px;
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
-  opacity: 0.6;
   cursor: pointer;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  transition: all var(--transition);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 16px;
 }
 
-.lang-btn:hover,
-.lang-btn.lang-active {
-  opacity: 1;
+.flag-svg {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  display: block;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+.lang-btn:hover {
   color: var(--forest);
+  background: rgba(58, 74, 69, 0.08);
 }
 
-.lang-sep {
-  font-size: 10px;
-  color: var(--muted);
-  opacity: 0.3;
-  line-height: 1;
-  user-select: none;
+.lang-btn.lang-active {
+  background: #fff;
+  color: var(--forest);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
 }
 
 /* En navbar transparente (hero home) los botones van en blanco */
+#navbar:not(.scrolled):not(.nav-solid) .lang-switcher {
+  background: rgba(255, 255, 255, 0.15);
+}
+
 #navbar:not(.scrolled):not(.nav-solid) .lang-btn {
-  color: rgba(255, 255, 255, 0.7);
-  opacity: 1;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-#navbar:not(.scrolled):not(.nav-solid) .lang-btn:hover,
-#navbar:not(.scrolled):not(.nav-solid) .lang-btn.lang-active {
+#navbar:not(.scrolled):not(.nav-solid) .lang-btn:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-#navbar:not(.scrolled):not(.nav-solid) .lang-sep {
-  color: rgba(255, 255, 255, 0.3);
+#navbar:not(.scrolled):not(.nav-solid) .lang-btn.lang-active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  box-shadow: none;
 }
 
 /* Móvil: el selector va dentro del menú desplegable */
@@ -2128,9 +2156,22 @@ a.contact-card:hover {
   .lang-switcher {
     margin-left: 0;
     margin-top: 8px;
-    padding-top: 12px;
+    padding-top: 16px;
     border-top: 1px solid rgba(58, 74, 69, 0.12);
     width: 100%;
     justify-content: flex-start;
+    background: none;
+    border-radius: 0;
+    padding: 12px 0 0;
+  }
+
+  .lang-btn {
+    font-size: 12px;
+    padding: 7px 12px;
+  }
+
+  .lang-btn.lang-active {
+    background: rgba(58, 74, 69, 0.1);
+    box-shadow: none;
   }
 }

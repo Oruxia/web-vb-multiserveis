@@ -245,7 +245,27 @@ if (twEl) {
   };
 }
 
-/* ── 9. JUMP NAV — sección activa (servicios.html) ─────────── */
+/* ── 9. PAGE TRANSITIONS ───────────────────────────────────── */
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  if (
+    href &&
+    !href.startsWith('http') &&
+    !href.startsWith('#') &&
+    !href.startsWith('tel:') &&
+    !href.startsWith('mailto:') &&
+    !href.startsWith('javascript:') &&
+    link.target !== '_blank'
+  ) {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.body.classList.add('page-fade-out');
+      setTimeout(() => { window.location.href = href; }, 300);
+    });
+  }
+});
+
+/* ── 10. JUMP NAV — sección activa (servicios.html) ────────── */
 const jumpLinks = document.querySelectorAll('.jump-link');
 if (jumpLinks.length > 0) {
   const sections = ['construccion', 'jardineria', 'limpieza']
