@@ -8,6 +8,7 @@
    6. Formulario: validación simple + mensaje de éxito
    7. Nav activo según página actual
    8. Jump nav: sección activa (servicios.html)
+   9. Banner de cookies
    ============================================================ */
 
 /* ── 1. NAVBAR ─────────────────────────────────────────────── */
@@ -292,3 +293,26 @@ if (jumpLinks.length > 0) {
   window.addEventListener('scroll', updateJumpNav, { passive: true });
   updateJumpNav(); /* estado inicial */
 }
+
+/* ── 9. BANNER DE COOKIES ──────────────────────────────────── */
+(function () {
+  var consent = localStorage.getItem('vb_cookies');
+  if (consent) return; /* ya decidió */
+
+  var banner = document.getElementById('cookieBanner');
+  if (!banner) return;
+
+  /* Mostrar con pequeño delay para que no tape el hero al cargar */
+  setTimeout(function () { banner.classList.add('visible'); }, 800);
+
+  document.getElementById('cookieAccept').addEventListener('click', function () {
+    localStorage.setItem('vb_cookies', 'accepted');
+    banner.classList.remove('visible');
+    /* Aquí se cargará Google Analytics cuando esté configurado */
+  });
+
+  document.getElementById('cookieReject').addEventListener('click', function () {
+    localStorage.setItem('vb_cookies', 'rejected');
+    banner.classList.remove('visible');
+  });
+})();

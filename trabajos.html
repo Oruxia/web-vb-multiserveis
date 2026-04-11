@@ -41,6 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="Logo VB sin fondo.webp" type="image/webp" />
   <link rel="stylesheet" href="css/styles.css?v=2" />
 </head>
 <body>
@@ -230,6 +231,11 @@
       </div>
       <div class="footer-bottom">
         <p data-i18n="footer.rights">© 2025 VB Multiserveis. Todos los derechos reservados.</p>
+        <div class="footer-legal-links">
+          <a href="aviso-legal.html">Aviso Legal</a>
+          <a href="privacidad.html">Privacidad</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -242,6 +248,15 @@
       <img id="lbImg" src="" alt="" />
     </div>
     <button class="lightbox-next" id="lbNext" aria-label="Siguiente">›</button>
+  </div>
+
+  <!-- BANNER COOKIES -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+    <p>Usamos cookies propias y de terceros (Google Analytics) para analizar el uso del sitio. <a href="cookies.html">Más información</a>.</p>
+    <div class="cookie-banner-actions">
+      <button class="cookie-btn cookie-btn-reject" id="cookieReject">Rechazar</button>
+      <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Aceptar</button>
+    </div>
   </div>
 
   <a href="https://wa.me/34619627650" class="whatsapp-float" target="_blank" rel="noopener" title="Escríbenos por WhatsApp">
