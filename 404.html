@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página no encontrada | VB Multiserveis</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" href="Logo VB sin fondo.webp" type="image/webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css?v=2" />
+  <style>
+    .notfound-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    .notfound-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--forest);
+      opacity: .08;
+      user-select: none;
+      margin-bottom: -1rem;
+    }
+    .notfound-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .notfound-wrap h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      color: var(--forest);
+      margin: 0 0 .75rem;
+    }
+    .notfound-wrap p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.6;
+      margin: 0 auto 2rem;
+    }
+    .notfound-actions {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-mesh" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <div class="notfound-wrap">
+    <div class="notfound-num">404</div>
+    <div class="notfound-icon">🔨</div>
+    <h1>Esta página no existe</h1>
+    <p>Puede que el enlace haya cambiado o que hayas escrito mal la dirección. No te preocupes, desde aquí puedes volver a donde necesitas.</p>
+    <div class="notfound-actions">
+      <a href="index.html" class="btn btn-forest">Ir al inicio</a>
+      <a href="contacto.html" class="btn btn-outline">Contactar</a>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/translations.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+</body>
+</html>
