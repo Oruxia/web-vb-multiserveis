@@ -1305,7 +1305,8 @@ a.contact-card:hover {
   }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-copy-mobile { display: block; font-size: .8rem; color: rgba(255,255,255,.3); margin-top: 6px; }
-  .footer-bottom { display: none; }
+  .footer-bottom { justify-content: center; }
+  .footer-bottom p { display: none; }
   .whatsapp-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
 
   /* Botones más compactos */
