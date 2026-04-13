@@ -1303,7 +1303,7 @@ a.contact-card:hover {
   .sp-section { padding: 60px 0; }
   .pt-section { padding: 60px 0; }
   .cl-section { padding: 60px 0; }
-  .cl-grid { grid-template-columns: 1fr; max-width: 420px; gap: 14px; }
+  .cl-grid { grid-template-columns: 1fr !important; max-width: 420px; gap: 14px; }
   .cl-card { padding: 24px 22px; }
   .cl-icon { width: 40px; height: 40px; }
   .cl-card h3 { font-size: 1rem; margin-bottom: 0; }
@@ -1521,10 +1521,17 @@ a.contact-card:hover {
 .cl-section .section-sub { color: rgba(255,255,255,.6); }
 .cl-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  max-width: 920px;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 420px;
   margin: 0 auto;
+}
+@media (min-width: 769px) {
+  .cl-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 920px;
+  }
 }
 .cl-card {
   background: rgba(255,255,255,.06);
