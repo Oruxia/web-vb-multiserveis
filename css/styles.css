@@ -23,7 +23,7 @@
   --text:         #1a2421;
   --muted:        #6b7c78;
   --white:        #ffffff;
-  --nav-h:        72px;   /* altura compacta: inner pages + scrolled */
+  --nav-h:        90px;   /* altura compacta: inner pages + scrolled */
   --nav-h-hero:   170px;  /* altura inicial home: acomoda logo 150px ancho */
   --radius:       6px;
   --shadow-sm:    0 2px 12px rgba(26,36,33,.08);
@@ -233,7 +233,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
 }
 .nav-logo img {
-  width: 150px;
+  width: 190px;
   height: auto;
   display: block;
   /* Logo oscuro sobre hero oscuro: se invierte a blanco */
@@ -242,7 +242,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 #navbar.scrolled .nav-logo img,
 #navbar.nav-solid .nav-logo img {
-  width: 100px;
+  width: 130px;
   /* Navbar blanco: logo en sus colores naturales */
   filter: none;
 }
@@ -595,6 +595,26 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .portfolio {
   background: rgba(245,242,237,.82);
   padding: 100px 0;
+}
+.own-work-callout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(58,74,69,.07);
+  border: 1px solid rgba(58,74,69,.18);
+  border-radius: 100px;
+  padding: 10px 22px;
+  width: fit-content;
+  margin: 0 auto 40px;
+  font-size: .875rem;
+  color: var(--forest);
+  font-weight: 500;
+}
+.own-work-callout svg {
+  width: 18px;
+  height: 18px;
+  color: var(--amber);
+  flex-shrink: 0;
 }
 .portfolio-tabs {
   display: flex;
@@ -1282,6 +1302,8 @@ a.contact-card:hover {
   /* Secciones — padding reducido en móvil */
   .sp-section { padding: 60px 0; }
   .pt-section { padding: 60px 0; }
+  .cl-section { padding: 60px 0; }
+  .cl-grid { grid-template-columns: 1fr; max-width: 420px; gap: 20px; }
   .about-teaser { padding: 60px 0; }
   .portfolio { padding: 60px 0; }
   .about { padding: 60px 0; }
@@ -1482,6 +1504,56 @@ a.contact-card:hover {
   z-index: 1;
 }
 .pt-cta { text-align: center; }
+
+/* ════════════════════════════════════════════════════════════
+   CL — CLIENTES (homepage, 3 tarjetas sobre fondo oscuro)
+   ════════════════════════════════════════════════════════════ */
+.cl-section {
+  background: rgba(17, 26, 23, .92);
+  padding: 100px 0;
+}
+.cl-section .section-tag { color: var(--amber); }
+.cl-section .section-header h2 { color: #fff; }
+.cl-section .section-sub { color: rgba(255,255,255,.6); }
+.cl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.cl-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  padding: 40px 28px 36px;
+  text-align: center;
+  transition: background .25s, border-color .25s;
+}
+.cl-card:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(200,144,58,.45);
+}
+.cl-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 20px;
+  color: var(--amber);
+}
+.cl-icon svg { width: 100%; height: 100%; }
+.cl-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.cl-card p {
+  color: rgba(255,255,255,.6);
+  font-size: .95rem;
+  line-height: 1.65;
+  margin: 0;
+}
 
 /* ════════════════════════════════════════════════════════════
    ABOUT TEASER (homepage, 2 columnas)
