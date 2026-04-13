@@ -1304,14 +1304,8 @@ a.contact-card:hover {
   .pt-section { padding: 60px 0; }
   .cl-section { padding: 60px 0; }
   .cl-grid { grid-template-columns: 1fr; max-width: 420px; gap: 14px; }
-  .cl-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 20px 22px;
-    text-align: left;
-  }
-  .cl-icon { width: 40px; height: 40px; flex-shrink: 0; margin: 0; }
+  .cl-card { padding: 24px 22px; }
+  .cl-icon { width: 40px; height: 40px; }
   .cl-card h3 { font-size: 1rem; margin-bottom: 0; }
   .cl-card p { display: none; }
   .about-teaser { padding: 60px 0; }
