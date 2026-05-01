@@ -16,18 +16,20 @@ const navbar    = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 
-navToggle.addEventListener('click', () => {
-  navToggle.classList.toggle('open');
-  navLinks.classList.toggle('open');
-});
-
-// Cerrar menú al hacer click en un enlace
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    navLinks.classList.remove('open');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    navLinks.classList.toggle('open');
   });
-});
+
+  // Cerrar menú al hacer click en un enlace
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+}
 
 /* ── 2. NAVBAR: sólido en páginas interiores (sin hero) ──────── */
 if (!document.querySelector('.hero')) {
@@ -202,12 +204,14 @@ if (form) {
 
 /* ── 7. NAV ACTIVO según página ────────────────────────────── */
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-navLinks.querySelectorAll('a:not(.btn-nav)').forEach(link => {
-  const href = link.getAttribute('href');
-  if (href === currentPage) {
-    link.classList.add('nav-active');
-  }
-});
+if (navLinks) {
+  navLinks.querySelectorAll('a:not(.btn-nav)').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+      link.classList.add('nav-active');
+    }
+  });
+}
 
 /* ── 8. TYPEWRITER — hero index ─────────────────────────────── */
 const twEl = document.getElementById('tw-word');
