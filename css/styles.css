@@ -24,7 +24,7 @@
   --muted:        #6b7c78;
   --white:        #ffffff;
   --nav-h:        90px;   /* altura compacta: inner pages + scrolled */
-  --nav-h-hero:   170px;  /* altura inicial home: acomoda logo 150px ancho */
+  --nav-h-hero:   188px;  /* altura inicial home: acomoda logo 150px ancho */
   --radius:       6px;
   --shadow-sm:    0 2px 12px rgba(26,36,33,.08);
   --shadow-md:    0 8px 32px rgba(26,36,33,.14);
@@ -233,7 +233,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
 }
 .nav-logo img {
-  width: 190px;
+  width: 215px;
   height: auto;
   display: block;
   /* Logo oscuro sobre hero oscuro: se invierte a blanco */
@@ -242,7 +242,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 #navbar.scrolled .nav-logo img,
 #navbar.nav-solid .nav-logo img {
-  width: 130px;
+  width: 150px;
   /* Navbar blanco: logo en sus colores naturales */
   filter: none;
 }
@@ -1218,7 +1218,7 @@ a.contact-card:hover {
   .nav-logo img {
     width: auto !important;
     max-width: 260px !important;
-    max-height: 72px !important;
+    max-height: 82px !important;
     height: auto !important;
     filter: none !important; /* móvil siempre blanco, logo en colores naturales */
     transition: none;
