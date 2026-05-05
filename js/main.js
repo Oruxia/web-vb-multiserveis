@@ -301,7 +301,10 @@ if (jumpLinks.length > 0) {
 /* ── 9. BANNER DE COOKIES ──────────────────────────────────── */
 (function () {
   var consent = localStorage.getItem('vb_cookies');
-  if (consent) return; /* ya decidió */
+
+  /* Si ya aceptó antes, cargar GA4 directamente */
+  if (consent === 'accepted') { loadGA4(); return; }
+  if (consent) return; /* rechazó, no hacer nada */
 
   var banner = document.getElementById('cookieBanner');
   if (!banner) return;
@@ -312,7 +315,7 @@ if (jumpLinks.length > 0) {
   document.getElementById('cookieAccept').addEventListener('click', function () {
     localStorage.setItem('vb_cookies', 'accepted');
     banner.classList.remove('visible');
-    /* Aquí se cargará Google Analytics cuando esté configurado */
+    loadGA4();
   });
 
   document.getElementById('cookieReject').addEventListener('click', function () {
@@ -320,3 +323,14 @@ if (jumpLinks.length > 0) {
     banner.classList.remove('visible');
   });
 })();
+
+function loadGA4() {
+  var s = document.createElement('script');
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6ZZ3TP7369';
+  s.async = true;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6ZZ3TP7369');
+}
