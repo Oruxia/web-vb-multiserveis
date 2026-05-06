@@ -23,8 +23,8 @@
   --text:         #1a2421;
   --muted:        #6b7c78;
   --white:        #ffffff;
-  --nav-h:        90px;   /* altura compacta: inner pages + scrolled */
-  --nav-h-hero:   170px;  /* altura inicial home: acomoda logo 150px ancho */
+  --nav-h:        110px;  /* altura compacta: inner pages + scrolled */
+  --nav-h-hero:   220px;  /* altura inicial home: acomoda logo 250px ancho */
   --radius:       6px;
   --shadow-sm:    0 2px 12px rgba(26,36,33,.08);
   --shadow-md:    0 8px 32px rgba(26,36,33,.14);
@@ -233,17 +233,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
 }
 .nav-logo img {
-  width: 190px;
+  width: 250px;
   height: auto;
   display: block;
-  /* Logo oscuro sobre hero oscuro: se invierte a blanco */
   filter: brightness(0) invert(1);
   transition: width 0.4s ease, filter 0.4s ease;
 }
 #navbar.scrolled .nav-logo img,
 #navbar.nav-solid .nav-logo img {
-  width: 130px;
-  /* Navbar blanco: logo en sus colores naturales */
+  width: 175px;
   filter: none;
 }
 
@@ -1055,7 +1053,7 @@ a.contact-card:hover {
 }
 .footer-brand img,
 .footer-logo {
-  width: 100px;
+  width: 200px;
   height: auto;
   object-fit: contain;
   margin-bottom: 14px;
@@ -1213,19 +1211,19 @@ a.contact-card:hover {
 @media (max-width: 768px) {
   /* Nav móvil — siempre compacta y sólida */
   .nav-inner {
-    height: 88px !important; /* más alta en móvil para logo grande */
+    height: 110px !important; /* más alta en móvil para logo grande */
   }
   .nav-logo img {
     width: auto !important;
-    max-width: 260px !important;
-    max-height: 72px !important;
+    max-width: 300px !important;
+    max-height: 100px !important;
     height: auto !important;
-    filter: none !important; /* móvil siempre blanco, logo en colores naturales */
+    filter: none !important;
     transition: none;
   }
   .nav-links {
     position: fixed;
-    top: 88px; /* alineado con nav móvil */
+    top: 110px; /* alineado con nav móvil */
     left: 0; right: 0;
     background: var(--white);
     flex-direction: column;
