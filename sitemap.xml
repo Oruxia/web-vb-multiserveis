@@ -6,22 +6,22 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vbmultiserveis.es/servicios.html</loc>
+    <loc>https://vbmultiserveis.es/servicios</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vbmultiserveis.es/trabajos.html</loc>
+    <loc>https://vbmultiserveis.es/trabajos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vbmultiserveis.es/nosotros.html</loc>
+    <loc>https://vbmultiserveis.es/nosotros</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vbmultiserveis.es/contacto.html</loc>
+    <loc>https://vbmultiserveis.es/contacto</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
