@@ -203,11 +203,11 @@ if (form) {
 }
 
 /* ── 7. NAV ACTIVO según página ────────────────────────────── */
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const currentPath = window.location.pathname;
 if (navLinks) {
   navLinks.querySelectorAll('a:not(.btn-nav)').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage) {
+    if (href && (currentPath === href || currentPath === href + '/')) {
       link.classList.add('nav-active');
     }
   });
@@ -324,13 +324,14 @@ if (jumpLinks.length > 0) {
   });
 })();
 
+window.dataLayer = window.dataLayer || [];
+function gtag(){ window.dataLayer.push(arguments); }
+
 function loadGA4() {
   var s = document.createElement('script');
   s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6ZZ3TP7369';
   s.async = true;
   document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-6ZZ3TP7369');
 }

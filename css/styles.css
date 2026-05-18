@@ -1111,6 +1111,9 @@ a.contact-card:hover {
   transition: color .2s;
 }
 .footer-legal-links a:hover { color: rgba(255,255,255,.6); }
+.footer-sep { color: rgba(255,255,255,.15); font-size: .75rem; line-height: 1; }
+.footer-oruxia { color: rgba(255,255,255,.2) !important; }
+.footer-oruxia:hover { color: var(--amber) !important; }
 
 /* ── Banner de cookies ─────────────────────────────────────── */
 .cookie-banner {

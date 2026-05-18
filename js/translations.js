@@ -84,7 +84,7 @@ const TRANSLATIONS = {
       empresa_item3: 'Contacto',
       contacto_h5: 'Contacto directo',
       address: 'Culla, Alt Maestrat · Castellón',
-      rights: '© 2025 VB Multiserveis. Todos los derechos reservados.'
+      rights: '© 2025–2026 VB Multiserveis. Todos los derechos reservados.'
     },
     svc: {
       hero_tag: 'Lo que hacemos',
@@ -352,7 +352,7 @@ const TRANSLATIONS = {
       empresa_item3: 'Contacte',
       contacto_h5: 'Contacte directe',
       address: 'Culla, Alt Maestrat · Castelló',
-      rights: '© 2025 VB Multiserveis. Tots els drets reservats.'
+      rights: '© 2025–2026 VB Multiserveis. Tots els drets reservats.'
     },
     svc: {
       hero_tag: 'El que fem',
