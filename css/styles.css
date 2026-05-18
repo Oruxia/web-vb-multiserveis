@@ -1111,9 +1111,17 @@ a.contact-card:hover {
   transition: color .2s;
 }
 .footer-legal-links a:hover { color: rgba(255,255,255,.6); }
-.footer-sep { color: rgba(255,255,255,.15); font-size: .75rem; line-height: 1; }
-.footer-oruxia { color: rgba(255,255,255,.2) !important; }
-.footer-oruxia:hover { color: var(--amber) !important; }
+.footer-credit {
+  text-align: center;
+  padding: 14px 0 22px;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.footer-credit a {
+  font-size: .78rem;
+  color: rgba(255,255,255,.2);
+  transition: color .2s;
+}
+.footer-credit a:hover { color: var(--amber); }
 
 /* ── Banner de cookies ─────────────────────────────────────── */
 .cookie-banner {
